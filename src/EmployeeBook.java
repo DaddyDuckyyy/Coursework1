@@ -20,7 +20,7 @@ public class EmployeeBook {
     }
 
     public double minSalary() {
-        double minSalary = employees[0].getSalary();
+        double minSalary = maxSalary();
         for (Employee employee : employees) {
             if (employee != null) {
                 if (minSalary > employee.getSalary()) {
