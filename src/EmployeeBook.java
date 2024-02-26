@@ -20,12 +20,10 @@ public class EmployeeBook {
     }
 
     public double minSalary() {
-        double minSalary = employees[0].getSalary();
+        double minSalary = maxSalary();
         for (Employee employee : employees) {
-            if (employee != null) {
-                if (minSalary > employee.getSalary()) {
-                    minSalary = employee.getSalary();
-                }
+            if (employee != null && minSalary > employee.getSalary()) {
+                minSalary = employee.getSalary();
             }
         }
         return minSalary;
@@ -70,10 +68,8 @@ public class EmployeeBook {
     public double minSalary(int department) {
         double minSalary = maxSalary();
         for (Employee employee : employees) {
-            if (employee.getDepartment() == department) {
-                if (minSalary > employee.getSalary()) {
-                    minSalary = employee.getSalary();
-                }
+            if (employee.getDepartment() == department && minSalary > employee.getSalary()) {
+                minSalary = employee.getSalary();
             }
         }
         return minSalary;
@@ -82,10 +78,8 @@ public class EmployeeBook {
     public double maxSalary(int department) {
         double maxSalary = 0;
         for (Employee employee : employees) {
-            if (employee.getDepartment() == department) {
-                if (maxSalary < employee.getSalary()) {
-                    maxSalary = employee.getSalary();
-                }
+            if (employee.getDepartment() == department && maxSalary < employee.getSalary()) {
+                maxSalary = employee.getSalary();
             }
         }
         return maxSalary;
@@ -162,18 +156,22 @@ public class EmployeeBook {
         }
     }
 
-    public void removeEmployee(int id) {
+    public String removeEmployee(int id) {
         for (int i = 0; i < employees.length; i++) {
             if (id == employees[i].getId()) {
                 employees[i] = null;
+                return "Сотрудник c ID " + id + " удалён";
             }
         }
+        return "Сотрудник не найден";
     }
-    public void employeeIdSearch(int id){
+
+    public String employeeIdSearch(int id) {
         for (Employee employee : employees) {
             if (id == employee.getId()) {
-                System.out.println(employee);
+                return employee.toString();
             }
         }
+        return "Сотрудник не найден";
     }
 }

@@ -21,17 +21,17 @@ public class Main {
 
 
         employeeBook.salaryIndexation(10);
-        System.out.println('\n'+"Минимальная зарплата в отделе: "+employeeBook.minSalary(4));
-        System.out.println("Максимальная зарплата в отделе: "+employeeBook.maxSalary(4));
-        System.out.println("Расходы в отделе: "+employeeBook.departmentalCosts(4));
-        System.out.println("Средняя зарплата по отделу: "+employeeBook.averageSalaryByDepartment(4));
+        System.out.println('\n' + "Минимальная зарплата в отделе: " + employeeBook.minSalary(4));
+        System.out.println("Максимальная зарплата в отделе: " + employeeBook.maxSalary(4));
+        System.out.println("Расходы в отделе: " + employeeBook.departmentalCosts(4));
+        System.out.println("Средняя зарплата по отделу: " + employeeBook.averageSalaryByDepartment(4));
         employeeBook.departmentSalaryIndexation(4, 10);
         employeeBook.printDepartmentEmployee(4);
         employeeBook.salaryComparison(65645);
 
 
-        employeeBook.employeeIdSearch(4);
-        employeeBook.removeEmployee(4);
+        System.out.println(employeeBook.employeeIdSearch(4));
+        System.out.println(employeeBook.removeEmployee(4));
         employeeBook.addEmployee("Иванова Варвара Александровна", 1, 67543);
 
 
