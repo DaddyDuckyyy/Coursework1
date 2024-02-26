@@ -22,10 +22,8 @@ public class EmployeeBook {
     public double minSalary() {
         double minSalary = maxSalary();
         for (Employee employee : employees) {
-            if (employee != null) {
-                if (minSalary > employee.getSalary()) {
-                    minSalary = employee.getSalary();
-                }
+            if (employee != null && minSalary > employee.getSalary()) {
+                minSalary = employee.getSalary();
             }
         }
         return minSalary;
@@ -70,10 +68,8 @@ public class EmployeeBook {
     public double minSalary(int department) {
         double minSalary = maxSalary();
         for (Employee employee : employees) {
-            if (employee.getDepartment() == department) {
-                if (minSalary > employee.getSalary()) {
-                    minSalary = employee.getSalary();
-                }
+            if (employee.getDepartment() == department && minSalary > employee.getSalary()) {
+                minSalary = employee.getSalary();
             }
         }
         return minSalary;
@@ -82,10 +78,8 @@ public class EmployeeBook {
     public double maxSalary(int department) {
         double maxSalary = 0;
         for (Employee employee : employees) {
-            if (employee.getDepartment() == department) {
-                if (maxSalary < employee.getSalary()) {
-                    maxSalary = employee.getSalary();
-                }
+            if (employee.getDepartment() == department && maxSalary < employee.getSalary()) {
+                maxSalary = employee.getSalary();
             }
         }
         return maxSalary;
