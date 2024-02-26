@@ -169,7 +169,8 @@ public class EmployeeBook {
             }
         }
     }
-    public void employeeIdSearch(int id){
+
+    public void employeeIdSearch(int id) {
         for (Employee employee : employees) {
             if (id == employee.getId()) {
                 System.out.println(employee);
