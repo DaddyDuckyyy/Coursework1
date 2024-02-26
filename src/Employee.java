@@ -10,7 +10,7 @@ public class Employee {
     // Constructors
     public Employee(String fullName, int department, double salary) {
         this.fullName = fullName;
-        validation(department);
+        departmentValidation(department);
         this.salary = salary;
         lastAssignedId++;
         id = lastAssignedId;
@@ -35,7 +35,7 @@ public class Employee {
     }
 
     public void setDepartment(int department) {
-        this.department = department;
+        departmentValidation(department);
     }
 
     public double getSalary() {
@@ -76,7 +76,7 @@ public class Employee {
     }
 
 
-    private void validation(int department) {
+    private void departmentValidation(int department) {
         if ((department >= 1) && (department <= 5)) {
             this.department = department;
         } else {

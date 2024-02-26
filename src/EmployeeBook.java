@@ -162,19 +162,22 @@ public class EmployeeBook {
         }
     }
 
-    public void removeEmployee(int id) {
+    public String removeEmployee(int id) {
         for (int i = 0; i < employees.length; i++) {
             if (id == employees[i].getId()) {
                 employees[i] = null;
+                return "Сотрудник c ID " + id + " удалён";
             }
         }
+        return "Сотрудник не найден";
     }
 
-    public void employeeIdSearch(int id) {
+    public String employeeIdSearch(int id) {
         for (Employee employee : employees) {
             if (id == employee.getId()) {
-                System.out.println(employee);
+                return employee.toString();
             }
         }
+        return "Сотрудник не найден";
     }
 }

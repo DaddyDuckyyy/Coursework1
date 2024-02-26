@@ -30,8 +30,8 @@ public class Main {
         employeeBook.salaryComparison(65645);
 
 
-        employeeBook.employeeIdSearch(4);
-        employeeBook.removeEmployee(4);
+        System.out.println(employeeBook.employeeIdSearch(4));
+        System.out.println(employeeBook.removeEmployee(4));
         employeeBook.addEmployee("Иванова Варвара Александровна", 1, 67543);
 
 
